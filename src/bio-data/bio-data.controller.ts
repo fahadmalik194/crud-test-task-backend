@@ -34,7 +34,7 @@ export class BioDataController {
     return this.bioDataService.get(param.id);
   }
 
-  @UseGuards(JwtGaurd)
+  // @UseGuards(JwtGaurd)
   @ApiBearerAuth()
   @HttpCode(HttpStatus.OK)
   @Post('read/all/data')

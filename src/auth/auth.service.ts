@@ -25,16 +25,14 @@ export class AuthService {
     const pwMatches = await argon.verify(user.password, dto.password);
     if (!pwMatches) throw new ForbiddenException('Credentials Incorrect');
 
-    return this.signToken(user.id, user.username);
+    user['password'] = null;
+    return this.signToken(user);
   }
 
-  async signToken(
-    userId: number,
-    username: string,
-  ): Promise<{ access_token: string; username: string }> {
+  async signToken(user): Promise<{ access_token: string; user_detail }> {
     const payload = {
-      sub: userId,
-      username,
+      sub: user.id,
+      username: user.username,
     };
     const secret = this.config.get('JWT_SECRET');
 
@@ -45,7 +43,7 @@ export class AuthService {
 
     return {
       access_token: token,
-      username: username,
+      user_detail: user,
     };
   }
 }

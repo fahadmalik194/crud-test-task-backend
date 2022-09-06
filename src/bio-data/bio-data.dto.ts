@@ -13,9 +13,9 @@ export class BioDataDto {
   fatherName: string;
 
   @ApiProperty()
-  @IsNumber()
+  @IsString()
   @IsNotEmpty()
-  cnic: number;
+  cnic: string;
 
   @ApiProperty()
   @IsString()
@@ -28,7 +28,7 @@ export class BioDataDto {
   image: string;
 
   @ApiProperty()
-  @IsString()
+  @IsNumber()
   @IsNotEmpty()
   creatorId: string;
 }

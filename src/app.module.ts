@@ -10,6 +10,7 @@ import { BioData } from './bio-data/bio-data.model';
 import { DomicileModule } from './domicile/domicile.module';
 import { Domicile } from './domicile/domicile.model';
 import { AuthModule } from './auth/auth.module';
+import { UtilsModule } from './utils/utils.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { AuthModule } from './auth/auth.module';
     BioDataModule,
     DomicileModule,
     AuthModule,
+    UtilsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

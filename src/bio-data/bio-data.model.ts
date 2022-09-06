@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { long } from 'aws-sdk/clients/cloudfront';
 import { Column, Table, Model } from 'sequelize-typescript';
 
 @Table
@@ -13,7 +14,7 @@ export class BioData extends Model {
 
   @Column
   @ApiProperty()
-  cnic: number;
+  cnic: string;
 
   @Column
   @ApiProperty()
@@ -25,5 +26,5 @@ export class BioData extends Model {
 
   @Column
   @ApiProperty()
-  creatorId: string;
+  creatorId: number;
 }
