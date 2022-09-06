@@ -20,7 +20,7 @@ async function bootstrap() {
 
   app.enableCors({
     allowedHeaders: ['content-type'],
-    origin: 'http://localhost:4200',
+    origin: ['http://localhost:4200', 'https://prod.d1eah2gbyx9a4z.amplifyapp.com'],
     credentials: true,
   });
 

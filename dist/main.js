@@ -18,7 +18,7 @@ async function bootstrap() {
     swagger_1.SwaggerModule.setup('api', app, document);
     app.enableCors({
         allowedHeaders: ['content-type'],
-        origin: 'http://localhost:4200',
+        origin: ['http://localhost:4200', 'https://prod.d1eah2gbyx9a4z.amplifyapp.com'],
         credentials: true,
     });
     await app.listen(3000);
